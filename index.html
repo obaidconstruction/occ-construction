@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ps" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="عبید ساختماني شرکت O.C.C — باور، کیفیت او مسلکیتوب. د ساختماني پروژو مسلکي خدمات په افغانستان کې.">
+<title>Obaid Construction Company | O.C.C</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f4f6f8;color:#202b36;line-height:1.8}
+header{background:#142b43;color:white;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:bold;color:#f2b544}
+header button,.hero a{border:0;border-radius:8px;padding:11px 18px;font-weight:bold;cursor:pointer;text-decoration:none}
+header button{background:#f2b544;color:#142b43}
+.hero{padding:75px 7%;text-align:center;background:linear-gradient(135deg,#142b43,#245477);color:white}
+.hero h1{font-size:clamp(30px,6vw,52px);margin:0 0 12px}
+.hero p{font-size:21px;color:#f2b544}
+.hero a{display:inline-block;background:#f2b544;color:#142b43;margin-top:15px}
+section{padding:42px 7%;max-width:1100px;margin:auto}
+h2{color:#142b43;font-size:28px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;border-radius:12px;padding:23px;box-shadow:0 3px 14px #142b4310;border-top:4px solid #f2b544}
+.card h3{color:#142b43}
+.contact{background:#142b43;color:white;max-width:none}
+.contact h2{color:#f2b544}
+.contact a{color:#f2b544}
+footer{text-align:center;padding:20px;background:#0d1e30;color:#ddd}
+.small{color:#657383}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">O.C.C | عبید ساختماني شرکت</div>
+  <button onclick="toggleLang()" id="langBtn">English</button>
+</header>
+
+<div class="hero">
+  <h1 id="title">عبید ساختماني شرکت</h1>
+  <p id="slogan">باور • کیفیت • مسلکیتوب</p>
+  <div id="intro">ستاسو د ساختماني پروژو لپاره مسلکي او باوري ملګری</div>
+  <a href="#contact" id="contactBtn">له موږ سره اړیکه</a>
+</div>
+
+<section>
+  <h2 id="aboutTitle">زموږ په اړه</h2>
+  <p id="aboutText">عبید ساختماني شرکت (O.C.C) د ساختماني پروژو په برخه کې د باور، کیفیت او مسلکیتوب ژمنه کوي. زموږ موخه د معیاري کار او مسلکي خدمتونو وړاندې کول دي.</p>
+</section>
+
+<section>
+  <h2 id="servicesTitle">زموږ خدمتونه</h2>
+  <div class="cards">
+    <div class="card"><h3 id="s1">ساختماني پروژې</h3><p id="d1">د ودانیو او نورو ساختماني پروژو مسلکي چارې.</p></div>
+    <div class="card"><h3 id="s2">د کانکریټ کیفیت</h3><p id="d2">د کانکریټ اچونې او کیفیت کنټرول ته پاملرنه.</p></div>
+    <div class="card"><h3 id="s3">انجنیري څارنه</h3><p id="d3">د پروژو منظم مدیریت او مسلکي څارنه.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 id="contactTitle">اړیکه او پته</h2>
+  <p><strong id="phoneLabel">د اړیکې شمېرې:</strong><br>
+  <a href="tel:+93706162369">+93 70 616 2369</a><br>
+  <a href="tel:+93796169665">+93 79 616 9665</a></p>
+  <p><strong id="kabulLabel">د کابل دفتر:</strong><br><span id="kabul">کابل، د پروژې تایمني، دوهم سړک، اریانا پلازه</span></p>
+  <p><strong id="kandaharLabel">د کندهار دفتر:</strong><br><span id="kandahar">کندهار، عینو مینه، بدخشان دروازه، سباوون کمپلیکس</span></p>
+  <p><a href="https://wa.me/93706162369" id="whatsapp">له موږ سره په WhatsApp اړیکه ونیسئ</a></p>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Obaid Construction Company (O.C.C)</div>
+  <div id="footerText">ټول حقوق خوندي دي.</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+let english=false;
+function toggleLang(){
+ english=!english;
+ document.documentElement.lang=english?"en":"ps";
+ document.documentElement.dir=english?"ltr":"rtl";
+ const t={
+ langBtn:["پښتو","English"],
+ title:["Obaid Construction Company","عبید ساختماني شرکت"],
+ slogan:["Trust • Quality • Professionalism","باور • کیفیت • مسلکیتوب"],
+ intro:["Your trusted partner for construction projects","ستاسو د ساختماني پروژو لپاره مسلکي او باوري ملګری"],
+ contactBtn:["Contact Us","له موږ سره اړیکه"],
+ aboutTitle:["About Us","زموږ په اړه"],
+ aboutText:["Obaid Construction Company (O.C.C) is committed to trust, quality and professionalism in construction. Our goal is to deliver quality work and professional services.","عبید ساختماني شرکت (O.C.C) د ساختماني پروژو په برخه کې د باور، کیفیت او مسلکیتوب ژمنه کوي. زموږ موخه د معیاري کار او مسلکي خدمتونو وړاندې کول دي."],
+ servicesTitle:["Our Services","زموږ خدمتونه"],
+ s1:["Construction Projects","ساختماني پروژې"],
+ d1:["Professional construction work for buildings and other projects.","د ودانیو او نورو ساختماني پروژو مسلکي چارې."],
+ s2:["Concrete Quality","د کانکریټ کیفیت"],
+ d2:["Attention to concrete pouring and quality control.","د کانکریټ اچونې او کیفیت کنټرول ته پاملرنه."],
+ s3:["Engineering Supervision","انجنیري څارنه"],
+ d3:["Organized project management and professional supervision.","د پروژو منظم مدیریت او مسلکي څارنه."],
+ contactTitle:["Contact & Locations","اړیکه او پته"],
+ phoneLabel:["Phone Numbers:","د اړیکې شمېرې:"],
+ kabulLabel:["Kabul Office:","د کابل دفتر:"],
+ kabul:["Taimani Project, 2nd Street, Ariana Plaza, Kabul","کابل، د پروژې تایمني، دوهم سړک، اریانا پلازه"],
+ kandaharLabel:["Kandahar Office:","د کندهار دفتر:"],
+ kandahar:["Aino Mina, Badakhshan Gate, Sabawoon Complex, Kandahar","کندهار، عینو مینه، بدخشان دروازه، سباوون کمپلیکس"],
+ whatsapp:["Contact us on WhatsApp","له موږ سره په WhatsApp اړیکه ونیسئ"],
+ footerText:["All rights reserved.","ټول حقوق خوندي دي."]
+ };
+ for(const id in t)document.getElementById(id).textContent=t[id][english?0:1];
+}
+</script>
+</body>
+</html>
