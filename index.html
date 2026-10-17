@@ -2,575 +2,302 @@
 <!DOCTYPE html>
 <html lang="ps" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10243b">
-  <meta name="description" content="Obaid Construction Company (O.C.C) — د معیاري ساختماني چارو، نقشې جوړونې، نظارت او بیا رغونې مسلکي خدمتونه.">
-  <meta property="og:title" content="Obaid Construction Company | O.C.C">
-  <meta property="og:description" content="باور، کیفیت او مسلکیتوب">
-  <title>Obaid Construction Company | O.C.C</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087bc1">
+<title>عبید ساختماني شرکت | O.C.C</title>
+<meta name="description" content="عبید ساختماني شرکت؛ باور، کیفیت او مسلکیتوب.">
 
-  <style>
-    :root {
-      --navy: #10243b;
-      --blue: #1769aa;
-      --gold: #e3ad45;
-      --light: #f4f7fb;
-      --text: #243247;
-      --white: #fff;
-    }
+<style>
+:root {
+  --blue: #087bc1;
+  --dark-blue: #07558b;
+  --light-blue: #edf8ff;
+  --white: #ffffff;
+  --text: #18334d;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.8;
+}
+a { text-decoration: none; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 3px 15px #0002;
+}
+.header-inner {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+.logo {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 4px;
+}
+.brand h1 { font-size: 21px; margin: 0; line-height: 1.5; }
+.tagline { margin: 2px 0 0; font-size: 13px; color: #e6f5ff; }
+nav { display: flex; gap: 15px; flex-wrap: wrap; }
+nav a { color: white; font-size: 14px; font-weight: bold; }
+nav a:hover { color: #d8efff; }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+.hero {
+  padding: 85px 5%;
+  text-align: center;
+  background: linear-gradient(135deg, #e5f5ff, #fff);
+}
+.hero-inner { max-width: 850px; margin: auto; }
+.hero h2 {
+  color: var(--blue);
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.5;
+  margin: 0 0 15px;
+}
+.hero p { font-size: 18px; margin: 10px 0 22px; }
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  margin: 5px;
+  background: var(--blue);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.btn:hover { background: var(--dark-blue); }
+.btn-outline { background: white; color: var(--blue); border: 1px solid var(--blue); }
 
-    body {
-      margin: 0;
-      font-family: Arial, Tahoma, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.9;
-    }
+section { padding: 60px 5%; }
+.container { width: 100%; max-width: 1150px; margin: auto; }
+.section-title { text-align: center; margin: 0 0 30px; color: var(--blue); font-size: 30px; }
+.about-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 28px;
+  background: var(--light-blue);
+  border-radius: 14px;
+  text-align: center;
+}
+.about-box p { margin: 0; font-size: 17px; }
 
-    a { text-decoration: none; }
-    img { max-width: 100%; }
+.services { background: var(--light-blue); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: white;
+  border: 1px solid #d8eaf6;
+  border-radius: 12px;
+  padding: 24px;
+}
+.service-card h3 { margin-top: 0; color: var(--blue); }
+.service-card p { margin-bottom: 0; }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.project-image {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #edf8ff;
+  border: 1px solid #d9eaf5;
+}
+.contact { background: var(--light-blue); }
+.contact-card {
+  background: white;
+  border: 1px solid #d8eaf6;
+  border-radius: 12px;
+  padding: 22px;
+  overflow-wrap: anywhere;
+}
+.contact-card h3 { color: var(--blue); margin-top: 0; }
+footer {
+  padding: 25px 5%;
+  text-align: center;
+  color: white;
+  background: var(--blue);
+}
+footer p { margin: 4px 0; }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(16,36,59,.97);
-      color: white;
-      box-shadow: 0 4px 20px #0002;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 16px 0;
-      text-align: center;
-    }
-
-    .logo {
-      width: 76px;
-      height: 76px;
-      object-fit: contain;
-      flex-shrink: 0;
-      background: white;
-      border-radius: 12px;
-      padding: 4px;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(22px, 4vw, 34px);
-      line-height: 1.5;
-      color: white;
-    }
-
-    .brand .pashto-name {
-      font-size: clamp(23px, 4vw, 34px);
-      font-weight: 800;
-      color: var(--gold);
-    }
-
-    .tagline {
-      margin: 0;
-      font-size: 15px;
-      color: #e6edf5;
-    }
-
-    .brand .pashto-tagline {
-      color: white;
-      font-size: 16px;
-    }
-
-    .short-name {
-      display: inline-block;
-      margin-top: 5px;
-      color: var(--gold);
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      direction: ltr;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px 22px;
-      padding: 10px 12px 16px;
-      border-top: 1px solid #ffffff20;
-    }
-
-    nav a {
-      color: white;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    nav a:hover { color: var(--gold); }
-
-    .hero {
-      min-height: 450px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: white;
-      padding: 75px 18px;
-      background:
-        linear-gradient(110deg, rgba(8,25,44,.91), rgba(16,54,84,.75)),
-        url("slab-project-wide.jpg") center/cover no-repeat;
-    }
-
-    .hero-content { max-width: 800px; }
-
-    .eyebrow {
-      color: var(--gold);
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .hero h2 {
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.5;
-      margin: 8px 0;
-    }
-
-    .hero h3 {
-      font-size: clamp(19px, 3vw, 25px);
-      margin: 8px 0;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 12px auto 24px;
-      color: #edf3f8;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 11px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: .2s;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn-gold { background: var(--gold); color: var(--navy); }
-    .btn-outline { border: 1px solid white; color: white; }
-
-    section { padding: 65px 0; }
-    .section-light { background: var(--light); }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .section-title h2 {
-      color: var(--navy);
-      font-size: clamp(25px, 4vw, 34px);
-      margin: 0;
-    }
-
-    .section-title p {
-      color: #68788b;
-      margin: 5px 0 0;
-    }
-
-    .about-box {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      font-size: 17px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .service {
-      background: white;
-      padding: 25px 20px;
-      border-radius: 12px;
-      border-bottom: 4px solid var(--gold);
-      box-shadow: 0 5px 22px #10243b0c;
-    }
-
-    .service .number {
-      display: inline-grid;
-      place-items: center;
-      width: 43px;
-      height: 43px;
-      background: #e9f2fc;
-      color: var(--blue);
-      border-radius: 10px;
-      font-size: 19px;
-      font-weight: bold;
-    }
-
-    .service h3 { color: var(--navy); margin: 12px 0 7px; }
-    .service p { margin: 0; font-size: 14px; }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .project {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 7px 24px #10243b15;
-      transition: transform .2s;
-    }
-
-    .project:hover { transform: translateY(-4px); }
-
-    .project img {
-      width: 100%;
-      height: 245px;
-      object-fit: cover;
-      display: block;
-      background: #e6ebf0;
-    }
-
-    .project h3 {
-      margin: 0;
-      padding: 13px 16px;
-      color: var(--navy);
-      font-size: 17px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .contact-card {
-      background: white;
-      border-radius: 12px;
-      padding: 22px;
-      border: 1px solid #e5eaf0;
-    }
-
-    .contact-card h3 { color: var(--navy); margin: 0 0 8px; }
-    .contact-card p { margin: 6px 0; overflow-wrap: anywhere; }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .btn-blue { background: var(--blue); color: white; }
-    .btn-green { background: #168b54; color: white; }
-
-    .english {
-      text-align: center;
-      direction: ltr;
-    }
-
-    .english h2 {
-      color: var(--navy);
-      font-size: clamp(25px, 4vw, 34px);
-    }
-
-    .english p { max-width: 750px; margin: 8px auto; }
-
-    footer {
-      background: var(--navy);
-      color: #e6edf5;
-      padding: 25px 0;
-      text-align: center;
-    }
-
-    footer strong { color: var(--gold); }
-    footer p { margin: 5px 0; }
-
-    .floating {
-      position: fixed;
-      bottom: 18px;
-      z-index: 20;
-      padding: 12px 16px;
-      border-radius: 30px;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 5px 18px #0003;
-    }
-
-    .floating-whatsapp { left: 15px; background: #168b54; }
-    .floating-call { right: 15px; background: var(--blue); }
-
-    @media (max-width: 850px) {
-      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 520px) {
-      .brand { gap: 10px; padding: 12px 0; }
-      .logo { width: 58px; height: 58px; }
-      .tagline { font-size: 12px; }
-      .brand .pashto-tagline { font-size: 13px; }
-      nav { gap: 8px 14px; }
-      nav a { font-size: 13px; }
-      .hero { min-height: 400px; }
-      section { padding: 48px 0; }
-      .services, .projects, .contact-grid { grid-template-columns: 1fr; }
-      .project img { height: 250px; }
-    }
-  </style>
+@media (max-width: 800px) {
+  .grid, .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .header-inner { justify-content: center; }
+  nav { justify-content: center; padding-bottom: 8px; }
+}
+@media (max-width: 520px) {
+  .grid, .projects-grid { grid-template-columns: 1fr; }
+  .header-inner { gap: 10px; }
+  .brand h1 { font-size: 17px; }
+  .logo { width: 62px; height: 62px; }
+  .tagline { font-size: 12px; }
+  nav { gap: 12px; }
+  nav a { font-size: 13px; }
+  .hero { padding: 55px 5%; }
+  .hero p { font-size: 16px; }
+  section { padding: 42px 5%; }
+  .project-image { height: 240px; }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
+  <div class="header-inner">
     <div class="brand">
-      <img src="file_00000000b8d0720aad1a886ff264c6fa.png"
-           alt="O.C.C. Logo" class="logo">
-
+      <img
+        src="file_00000000b8d0720aad1a886ff264c6fa.png?v=4"
+        alt="O.C.C Logo"
+        class="logo">
       <div>
-        <h1>Obaid Construction Company</h1>
-        <p class="tagline">Trust Quality and Professionalism</p>
-        <div class="pashto-name">عبید ساختماني شرکت</div>
-        <p class="tagline pashto-tagline">باور، کیفیت او مسلکیتوب</p>
-        <div class="short-name">O.C.C</div>
+        <h1>عبید ساختماني شرکت</h1>
+        <p class="tagline">Obaid Construction Company — O.C.C</p>
+        <p class="tagline">باور، کیفیت او مسلکیتوب</p>
       </div>
     </div>
-  </div>
 
-  <nav>
-    <a href="#about">زموږ په اړه</a>
-    <a href="#services">خدمات</a>
-    <a href="#projects">زموږ د پروژو کتنه</a>
-    <a href="#contact">اړیکه</a>
-    <a href="#english">English</a>
-  </nav>
+    <nav>
+      <a href="#home">کور</a>
+      <a href="#about">زموږ په اړه</a>
+      <a href="#services">خدمتونه</a>
+      <a href="#projects">پروژې</a>
+      <a href="#contact">اړیکه</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">O.C.C | باوري ساختماني خدمتونه</div>
-      <h2>باکیفیته او عصري اعمار</h2>
-      <h3>د باکیفیته موادو او مسلکي انجینرانو په مرسته</h3>
-      <p>
-        موږ د ساختماني چارو په برخه کې د مسلکي خدمتونو، کیفیت،
-        خوندیتوب او د مشتریانو رضایت ته ژمن یو.
-      </p>
-      <div class="buttons">
-        <a class="btn btn-gold" href="#projects">زموږ پروژې وګورئ</a>
-        <a class="btn btn-outline" href="#contact">له موږ سره اړیکه</a>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <h2>باکیفیته او عصري اعمار</h2>
+    <p>د هرې پیاوړې ودانۍ بنسټ، له معیاري کار او مسلکي انجنیري څخه پیلېږي.</p>
+    <p>Obaid Construction Company — Trust, Quality and Professionalism</p>
+    <a class="btn" href="#projects">زموږ پروژې</a>
+    <a class="btn btn-outline" href="https://wa.me/93706162369">له موږ سره اړیکه</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">زموږ په اړه</h2>
+    <div class="about-box">
+      <p>عبید ساختماني شرکت (O.C.C) د ساختماني چارو په برخه کې د باور، کیفیت او مسلکیتوب ژمن دی. زموږ موخه د معیاري موادو، مسلکي کار او منظم مدیریت له لارې د مشتریانو اړتیاوې پوره کول دي.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title">زموږ خدمتونه</h2>
+    <div class="grid">
+      <div class="service-card">
+        <h3>ودانیزې چارې</h3>
+        <p>د استوګنیزو او سوداګریزو ودانیو ساختماني کارونه.</p>
+      </div>
+      <div class="service-card">
+        <h3>کانکریټ اچونه</h3>
+        <p>د کانکریټ اچونې منظم کارونه او د کیفیت کنټرول.</p>
+      </div>
+      <div class="service-card">
+        <h3>انجنیري خدمتونه</h3>
+        <p>مسلکي نظارت، د پروژې پلان او د کار همغږي.</p>
+      </div>
+      <div class="service-card">
+        <h3>د ودانیو جوړول</h3>
+        <p>د ودانیزو پروژو اجرا د کیفیت او خوندیتوب په پام کې نیولو سره.</p>
+      </div>
+      <div class="service-card">
+        <h3>د پروژې مدیریت</h3>
+        <p>د ساختماني کارونو تنظیم، څارنه او همغږي.</p>
+      </div>
+      <div class="service-card">
+        <h3>د کیفیت کنټرول</h3>
+        <p>د ساختماني موادو او کارونو د کیفیت څارنه.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>زموږ په اړه</h2>
-        <p>باور • کیفیت • مسلکیتوب</p>
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">زموږ پروژې</h2>
+    <div class="projects-grid">
+      <img class="project-image" src="slab-project-wide.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="site-worker.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="residential-project.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="gate-project-2.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="gate-project-1.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="file_00000000fc98820a81331a56e9e3c483.png" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="engineer-site.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="concrete-slab.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="IMG-20260609-WA0027.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="IMG-20260305-WA0033.jpg" alt="د شرکت پروژه" loading="lazy">
+      <img class="project-image" src="20260312_223431.jpg" alt="د شرکت پروژه" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">اړیکه له موږ سره</h2>
+    <div class="grid">
+      <div class="contact-card">
+        <h3>د اړیکې شمېرې</h3>
+        <p>واتساپ: +93 70 616 2369</p>
+        <a class="btn" href="https://wa.me/93706162369">واتساپ ته پیغام</a>
+        <p>ټیلیفون: +93 79 616 9665</p>
+        <a class="btn btn-outline" href="tel:+93796169665">زنګ ووهئ</a>
       </div>
-      <div class="about-box">
-        <p>
-          عبید ساختماني شرکت (O.C.C) د ساختماني خدمتونو په برخه کې
-          د کیفیت، مسلکیتوب، خوندیتوب او د مشتریانو رضایت ته ژمن دی.
-          زموږ موخه دا ده چې هره پروژه د مسلکي انجینرانو، معیاري موادو
-          او دقیق نظارت په مرسته بشپړه شي.
-        </p>
+      <div class="contact-card">
+        <h3>د کندهار پته</h3>
+        <p>کندهار، حضرت جي بابا، رحمت نوري پلازه، درېیم منزل، ۲۶ نمبر دفتر</p>
+      </div>
+      <div class="contact-card">
+        <h3>د کابل پته</h3>
+        <p>کابل، د پروژې تایمني، دوهم سړک، اریانا پلازه</p>
       </div>
     </div>
-  </section>
-
-  <section id="services" class="section-light">
-    <div class="container">
-      <div class="section-title">
-        <h2>زموږ خدمات</h2>
-        <p>ستاسو د پروژې لپاره مسلکي حللارې</p>
-      </div>
-
-      <div class="services">
-        <article class="service">
-          <span class="number">۰۱</span>
-          <h3>بشپړه اعمار</h3>
-          <p>
-            موږ ستاسو پروژې له بنسټ څخه تر وروستي چت پورې د باکیفیته
-            موادو، عصري ډیزاین، مسلکي کارکوونکو او پرمختللو ماشینونو
-            په مرسته په ټاکلې موده کې بشپړوو.
-          </p>
-        </article>
-
-        <article class="service">
-          <span class="number">۰۲</span>
-          <h3>نقشه جوړونه</h3>
-          <p>
-            موږ ستاسو د پروژو لپاره ستاسو د خوښې مطابق نقشې د تکړه
-            او بااستعداده انجینرانو په مرسته جوړوو.
-          </p>
-        </article>
-
-        <article class="service">
-          <span class="number">۰۳</span>
-          <h3>بشپړ نظارت</h3>
-          <p>
-            موږ ستاسو د اعمار بشپړ نظارت ترسره کوو، ترڅو هره پروژه مو
-            په پوره دقت او مسلکي ډول بشپړه شي.
-          </p>
-        </article>
-
-        <article class="service">
-          <span class="number">۰۴</span>
-          <h3>بیا رغونه</h3>
-          <p>
-            موږ د استوګنیزو کورونو، دفترونو او مارکیټونو بیا رغونه
-            د نوو او عصري ډیزاینونو په مرسته ترسره کوو.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>زموږ د پروژو کتنه</h2>
-        <p>زموږ د ساختماني کارونو انځوریزه کتنه</p>
-      </div>
-
-      <div class="projects">
-        <article class="project">
-          <img src="slab-project-wide.jpg" alt="د کانکریټ سلب پروژه" loading="lazy">
-          <h3>د کانکریټ سلب پروژه</h3>
-        </article>
-
-        <article class="project">
-          <img src="site-worker.jpg" alt="په ساختماني پروژه کې کارکوونکی" loading="lazy">
-          <h3>د ساختماني کارونو پروسه</h3>
-        </article>
-
-        <article class="project">
-          <img src="residential-project.jpg" alt="د استوګنیزې ودانۍ پروژه" loading="lazy">
-          <h3>د استوګنیزې ودانۍ پروژه</h3>
-        </article>
-
-        <article class="project">
-          <img src="gate-project-2.jpg" alt="د دروازې پروژه" loading="lazy">
-          <h3>د دروازې پروژه</h3>
-        </article>
-
-        <article class="project">
-          <img src="gate-project-1.jpg" alt="د دروازې ساختماني کارونه" loading="lazy">
-          <h3>د دروازې ساختماني کارونه</h3>
-        </article>
-
-        <article class="project">
-          <img src="file_00000000fc98820a81331a56e9e3c483.png" alt="د شرکت پروژه" loading="lazy">
-          <h3>د شرکت پروژه</h3>
-        </article>
-
-        <article class="project">
-          <img src="engineer-site.jpg" alt="په پروژه کې انجینر" loading="lazy">
-          <h3>د انجینرانو نظارت</h3>
-        </article>
-
-        <article class="project">
-          <img src="concrete-slab.jpg" alt="د کانکریټ سلب" loading="lazy">
-          <h3>د کانکریټ کارونه</h3>
-        </article>
-
-        <article class="project">
-          <img src="IMG-20260609-WA0027.jpg" alt="ساختماني پروژه" loading="lazy">
-          <h3>ساختماني پروژه</h3>
-        </article>
-
-        <article class="project">
-          <img src="IMG-20260305-WA0033.jpg" alt="د شرکت ساختماني کارونه" loading="lazy">
-          <h3>د شرکت ساختماني کارونه</h3>
-        </article>
-
-        <article class="project">
-          <img src="20260312_223431.jpg" alt="د O.C.C پروژه" loading="lazy">
-          <h3>د O.C.C پروژه</h3>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section-light">
-    <div class="container">
-      <div class="section-title">
-        <h2>له موږ سره اړیکه</h2>
-        <p>د مشورې او ساختماني خدمتونو لپاره اړیکه ونیسئ</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>د واتساپ او ټیلیفون شمیرې</h3>
-          <p><strong>WhatsApp:</strong> +93 706162369</p>
-          <p><strong>Phone:</strong> +93 796169665</p>
-          <div class="contact-actions">
-            <a class="btn btn-green" href="https://wa.me/93706162369" target="_blank" rel="noopener">واتساپ ته پیغام</a>
-            <a class="btn btn-blue" href="tel:+93796169665">اوس زنګ ووهئ</a>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <h3>د کندهار دفتر</h3>
-          <p>کندهار، حضرت جي بابا، رحمت نوري پلازه، درېیم منزل، ۲۶ نمبر دفتر</p>
-          <h3 style="margin-top:18px">د کابل دفتر</h3>
-          <p>کابل، د پروژې تایمني، دوهم سړک، اریانا پلازه</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="english" class="english">
-    <div class="container">
-      <h2>Obaid Construction Company</h2>
-      <p><strong>Trust, Quality and Professionalism</strong></p>
-      <p>
-        We are committed to professional construction services,
-        quality materials, safety, careful supervision and customer satisfaction.
-      </p>
-      <p>Construction • Design • Supervision • Renovation</p>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="container">
-    <strong>Obaid Construction Company (O.C.C)</strong>
-    <p>باور، کیفیت او مسلکیتوب</p>
-    <p>© 2026 O.C.C. ټول حقوق خوندي دي.</p>
-  </div>
+  <strong>عبید ساختماني شرکت | O.C.C</strong>
+  <p>باور، کیفیت او مسلکیتوب</p>
+  <p>© Obaid Construction Company</p>
 </footer>
-
-<a class="floating floating-whatsapp"
-   href="https://wa.me/93706162369"
-   target="_blank" rel="noopener">WhatsApp</a>
-
-<a class="floating floating-call" href="tel:+93796169665">📞 زنګ</a>
 
 </body>
 </html>
