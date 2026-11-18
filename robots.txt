@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://obaidconstruction.github.io/occ-construction/sitemap.xml

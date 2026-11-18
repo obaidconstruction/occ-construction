@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10243b">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://obaidconstruction.github.io/occ-construction/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://obaidconstruction.github.io/occ-construction/">
+  <meta property="og:image" content="https://obaidconstruction.github.io/occ-construction/file_00000000b8d0720aad1a886ff264c6fa.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="description" content="Obaid Construction Company (O.C.C) — د معیاري ساختماني چارو، نقشې جوړونې، نظارت او بیا رغونې مسلکي خدمتونه.">
   <meta property="og:title" content="Obaid Construction Company | O.C.C">
   <meta property="og:description" content="باور، کیفیت او مسلکیتوب">
@@ -344,10 +350,102 @@
       .services, .projects, .contact-grid { grid-template-columns: 1fr; }
       .project img { height: 250px; }
     }
+  
+    /* O.C.C professional refresh — preview branch */
+    body { background: #fff; }
+    body.is-loading { overflow: hidden; }
+    .site-loader {
+      position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center;
+      padding: 24px; color: #fff; background: radial-gradient(circle at 50% 35%, #1b4266 0, #10243b 62%);
+      opacity: 1; visibility: visible; transition: opacity .35s ease, visibility .35s ease;
+    }
+    .site-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .site-loader-inner { width: min(320px, 88vw); text-align: center; }
+    .site-loader-logo-wrap { width: 104px; height: 104px; margin: 0 auto 18px; display: grid; place-items: center;
+      border: 1px solid #55b9ee66; border-radius: 28px; box-shadow: 0 0 36px #168bd533; }
+    .site-loader-logo { width: 88px; height: 88px; object-fit: contain; animation: occLogoPulse .9s ease-in-out infinite alternate; }
+    .site-loader-name { margin: 0; color: #fff; font-size: 19px; letter-spacing: .3px; }
+    .site-loader-tagline { margin: 2px 0 20px; color: #b9d8ef; font-size: 12px; direction: ltr; }
+    .loader-track { height: 7px; overflow: hidden; border-radius: 20px; background: #ffffff25; direction: ltr; }
+    .loader-fill { width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #168bd5, #64c9ff);
+      transition: width .18s ease; }
+    .loader-percentages { display: flex; justify-content: space-between; margin-top: 9px; color: #d6e9f6; font-size: 12px; direction: ltr; }
+    .loader-percentages span.active { color: #70d0ff; font-weight: 800; }
+    header { backdrop-filter: blur(14px); }
+    .brand { flex-direction: row; gap: 18px; padding: 14px 0; }
+    .logo { width: 76px; height: 76px; }
+    .brand > div { text-align: right; }
+    .brand h1 { font-size: clamp(21px, 3vw, 30px); }
+    .brand .pashto-name { font-size: clamp(19px, 2.7vw, 27px); }
+    .tagline { letter-spacing: .25px; }
+    nav { gap: 9px 25px; padding: 12px; }
+    nav a { padding: 5px 2px; transition: color .2s ease; }
+    .hero { min-height: 510px; background-position: center 45%; }
+    .hero-content { padding: 28px; border: 1px solid #ffffff20; border-radius: 22px; background: #0b203b42; backdrop-filter: blur(4px); }
+    .eyebrow { color: #66c5f5; }
+    .btn { border-radius: 999px; padding: 12px 25px; box-shadow: 0 7px 18px #07182b20; }
+    .btn-gold { color: #fff; background: #087bc1; }
+    section { scroll-margin-top: 120px; }
+    .section-title { margin-bottom: 38px; }
+    .section-title h2 { position: relative; display: inline-block; padding-bottom: 9px; }
+    .section-title h2::after { content: ""; position: absolute; width: 54px; height: 3px; right: 50%; bottom: 0;
+      transform: translateX(50%); border-radius: 4px; background: #168bd5; }
+    .about-box { padding: 28px 32px; border: 1px solid #e7edf4; border-radius: 18px; background: #fff;
+      box-shadow: 0 12px 35px #10243b0a; }
+    .service, .project, .contact-card { border: 1px solid #e8edf3; border-radius: 17px; box-shadow: 0 10px 28px #10243b0d; }
+    .service { border-bottom: 3px solid #087bc1; transition: transform .22s ease, box-shadow .22s ease; }
+    .service:hover, .contact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px #10243b16; }
+    .service .number { border-radius: 13px; background: #e6f4fc; color: #087bc1; }
+    .project { transition: transform .22s ease, box-shadow .22s ease; }
+    .project:hover { transform: translateY(-5px); box-shadow: 0 16px 34px #10243b20; }
+    .project img { height: 260px; }
+    .contact-card { transition: transform .22s ease, box-shadow .22s ease; }
+    .btn-blue { background: #1769aa; }
+    .floating { padding: 11px 18px; }
+    a:focus-visible { outline: 3px solid #63c5f4; outline-offset: 4px; }
+    @keyframes occLogoPulse { from { transform: scale(.94); filter: drop-shadow(0 0 2px #55b9ee55); }
+      to { transform: scale(1.04); filter: drop-shadow(0 0 12px #55b9ee99); } }
+    @media (max-width: 620px) {
+      .brand { gap: 12px; padding: 11px 0; }
+      .brand > div { text-align: center; }
+      .logo { width: 76px; height: 76px; }
+      .brand h1 { font-size: 18px; }
+      .brand .pashto-name { font-size: 18px; }
+      .tagline { font-size: 11px; }
+      .brand .pashto-tagline { font-size: 12px; }
+      .short-name { font-size: 16px; }
+      nav { gap: 7px 15px; }
+      .hero { min-height: 430px; padding: 55px 14px; }
+      .hero-content { padding: 22px 14px; }
+      .about-box { padding: 20px 17px; }
+      .project img { height: 245px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+
   </style>
 </head>
 
 <body>
+
+<div id="occ-loader" class="site-loader" role="status" aria-label="Loading O.C.C website">
+  <div class="site-loader-inner">
+    <div class="site-loader-logo-wrap">
+      <img class="site-loader-logo" src="file_00000000b8d0720aad1a886ff264c6fa.png" alt="O.C.C. Logo">
+    </div>
+    <p class="site-loader-name">Obaid Construction Company</p>
+    <p class="site-loader-tagline">Trust Quality Professionalism</p>
+    <div class="loader-track" role="progressbar" aria-label="Website loading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div id="occ-loader-fill" class="loader-fill"></div>
+    </div>
+    <div class="loader-percentages" aria-hidden="true">
+      <span data-step="25">25%</span><span data-step="50">50%</span><span data-step="75">75%</span><span data-step="100">100%</span>
+    </div>
+  </div>
+</div>
+
 
 <header>
   <div class="container">
@@ -357,7 +455,7 @@
 
       <div>
         <h1>Obaid Construction Company</h1>
-        <p class="tagline">Trust Quality and Professionalism</p>
+        <p class="tagline">Trust Quality Professionalism</p>
         <div class="pashto-name">عبید ساختماني شرکت</div>
         <p class="tagline pashto-tagline">باور، کیفیت او مسلکیتوب</p>
         <div class="short-name">O.C.C</div>
@@ -527,11 +625,11 @@
         </article>
 
         <article class="project">
-          <img src="file_000000006ab4821191fe2a70f0aaa8d6.jpg" alt="" loading="lazy">
+          <img src="file_000000006ab4821191fe2a70f0aaa8d6.jpg" alt="د O.C.C د ساختماني پروژو انځور" loading="lazy">
         </article>
 
         <article class="project">
-          <img src="file_00000000a8bc821199b4faee0556d307.png" alt="" loading="lazy">
+          <img src="file_00000000a8bc821199b4faee0556d307.png" alt="د O.C.C د ساختماني پروژو انځور" loading="lazy">
         </article>
       </div>
     </div>
@@ -568,7 +666,7 @@
   <section id="english" class="english">
     <div class="container">
       <h2>Obaid Construction Company</h2>
-      <p><strong>Trust, Quality and Professionalism</strong></p>
+      <p><strong>Trust Quality Professionalism</strong></p>
       <p>
         We are committed to professional construction services,
         quality materials, safety, careful supervision and customer satisfaction.
@@ -591,6 +689,35 @@
    target="_blank" rel="noopener">WhatsApp</a>
 
 <a class="floating floating-call" href="tel:+93796169665">📞 زنګ</a>
+
+
+<script>
+(() => {
+  const loader = document.getElementById("occ-loader");
+  if (!loader) return;
+  document.body.classList.add("is-loading");
+  const fill = document.getElementById("occ-loader-fill");
+  const track = loader.querySelector('[role="progressbar"]');
+  const steps = [...loader.querySelectorAll("[data-step]")];
+  const startedAt = Date.now();
+  [25, 50, 75, 100].forEach((value, index) => {
+    window.setTimeout(() => {
+      fill.style.width = value + "%";
+      track.setAttribute("aria-valuenow", String(value));
+      steps.forEach((step) => step.classList.toggle("active", Number(step.dataset.step) <= value));
+    }, (index + 1) * 250);
+  });
+  const animationDone = new Promise((resolve) => window.setTimeout(resolve, 1000));
+  const pageReady = document.readyState === "complete"
+    ? Promise.resolve()
+    : new Promise((resolve) => window.addEventListener("load", resolve, { once: true }));
+  Promise.all([animationDone, pageReady]).then(() => {
+    loader.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
+    window.setTimeout(() => loader.remove(), 400);
+  });
+})();
+</script>
 
 </body>
 </html>
