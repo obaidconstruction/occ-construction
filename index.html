@@ -842,7 +842,7 @@
     original.forEach((value, textNode) => {
       if (english) {
         const key = value.replace(/\\s+/g, " ").trim();
-        if (translations[key]) textNode.nodeValue = value.replace(key, translations[key]);
+        if (translations[key]) textNode.nodeValue = translations[key];
       } else {
         textNode.nodeValue = value;
       }
