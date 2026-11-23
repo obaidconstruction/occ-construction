@@ -397,6 +397,48 @@
     .loader-percentages { display: flex; justify-content: space-between; margin-top: 9px; color: #d6e9f6; font-size: 12px; direction: ltr; }
     .loader-percentages span.active { color: #70d0ff; font-weight: 800; }
     header { backdrop-filter: blur(14px); }
+    /* O.C.C theme switch: Light is the default */
+    :root { color-scheme: light; }
+    body, .section-light, .service, .project, .contact-card, .stat-card,
+    .stats-location article, .progress-list, .about-box {
+      transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .theme-switch {
+      position: absolute; top: 14px; right: max(4%, calc((100% - 1120px) / 2));
+      z-index: 30; display: flex; align-items: center; gap: 7px;
+      padding: 5px 9px; border: 1px solid #ffffff35; border-radius: 30px;
+      background: #ffffff12; direction: ltr;
+    }
+    .theme-switch button {
+      display: grid; place-items: center; width: 34px; height: 30px;
+      border: 0; border-radius: 20px; background: transparent;
+      color: #d6e9f6; font-size: 19px; cursor: pointer;
+    }
+    .theme-switch button[aria-pressed="true"] {
+      color: #10243b; background: #fff; box-shadow: 0 2px 8px #0003;
+    }
+    body.dark-mode { background: #10243b; color: #e6edf5; color-scheme: dark; }
+    body.dark-mode .section-light { background: #0b1b2c; }
+    body.dark-mode .section-title h2, body.dark-mode .service h3,
+    body.dark-mode .project h3, body.dark-mode .contact-card h3,
+    body.dark-mode .stat-label, body.dark-mode .progress-list h3 {
+      color: #f2f7fb !important;
+    }
+    body.dark-mode .section-title p, body.dark-mode .service p,
+    body.dark-mode .about-box, body.dark-mode .contact-card p { color: #c2d0dc; }
+    body.dark-mode .service, body.dark-mode .project, body.dark-mode .contact-card,
+    body.dark-mode .stat-card, body.dark-mode .stats-location article,
+    body.dark-mode .progress-list, body.dark-mode .about-box {
+      background: #172f49; border-color: #29445f; color: #e6edf5;
+    }
+    body.dark-mode .progress-track { background: #29445f; }
+    body.dark-mode .stat-sub { color: #b9c9d8; }
+    body.dark-mode footer { background: #081827; }
+    @media (max-width: 620px) {
+      .theme-switch { top: 8px; right: 8px; padding: 3px 6px; gap: 3px; }
+      .theme-switch button { width: 29px; height: 27px; font-size: 17px; }
+    }
+
     .brand { flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 20px 0; text-align: center; }
     .logo { width: 88px; height: 88px; }
     .brand > div { text-align: center; }
@@ -489,6 +531,10 @@
     </div>
   </div>
 
+  <div class="theme-switch" id="occ-theme-switch" role="group" aria-label="Color theme">
+    <button type="button" id="theme-dark" aria-label="Dark mode" aria-pressed="false">☾</button>
+    <button type="button" id="theme-light" aria-label="Light mode" aria-pressed="true">☀</button>
+  </div>
   <nav>
     <a href="#about">زموږ په اړه</a>
     <a href="#services">خدمات</a>
@@ -858,5 +904,25 @@
 })();
 </script>
 
+
+<script>
+(() => {
+  const dark = document.getElementById("theme-dark");
+  const light = document.getElementById("theme-light");
+  if (!dark || !light) return;
+  const apply = (mode) => {
+    const isDark = mode === "dark";
+    document.body.classList.toggle("dark-mode", isDark);
+    dark.setAttribute("aria-pressed", String(isDark));
+    light.setAttribute("aria-pressed", String(!isDark));
+    try { localStorage.setItem("occ-theme", mode); } catch (_) {}
+  };
+  let saved = "light";
+  try { saved = localStorage.getItem("occ-theme") || "light"; } catch (_) {}
+  apply(saved === "dark" ? "dark" : "light");
+  dark.addEventListener("click", () => apply("dark"));
+  light.addEventListener("click", () => apply("light"));
+})();
+</script>
 </body>
 </html>
