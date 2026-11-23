@@ -495,7 +495,7 @@
     <a href="#statistics">د شرکت لاسته‌راوړنې</a>
     <a href="#projects">زموږ د پروژو کتنه</a>
     <a href="#contact">اړیکه</a>
-    <a href="#english">English</a>
+    <a href="#" id="language-toggle" aria-label="Switch website language">English</a>
   </nav>
 </header>
 
@@ -716,7 +716,7 @@
     </div>
   </section>
 
-  <section id="english" class="english">
+  <section id="english" class="english" hidden>
     <div class="container">
       <h2>Obaid Construction Company</h2>
       <p><strong>Trust Quality Professionalism</strong></p>
@@ -768,6 +768,92 @@
     loader.classList.add("is-hidden");
     document.body.classList.remove("is-loading");
     window.setTimeout(() => loader.remove(), 400);
+  });
+})();
+</script>
+
+
+<script>
+(() => {
+  const translations = {
+    "عبید ساختماني شرکت":"Obaid Construction Company",
+    "باور، کیفیت او مسلکیتوب":"Trust, Quality & Professionalism",
+    "زموږ په اړه":"About Us",
+    "خدمات":"Services",
+    "د شرکت لاسته‌راوړنې":"Company Statistics",
+    "زموږ د پروژو کتنه":"Our Projects",
+    "اړیکه":"Contact",
+    "باوري ساختماني خدمتونه":"Reliable Construction Services",
+    "باکیفیته او عصري اعمار":"Quality & Modern Construction",
+    "د باکیفیته موادو او مسلکي انجینرانو په مرسته":"Built with Quality Materials and Professional Engineers",
+    "موږ د ساختماني چارو په برخه کې د مسلکي خدمتونو، کیفیت، خوندیتوب او د مشتریانو رضایت ته ژمن یو.":"We are committed to professional construction services, quality, safety and customer satisfaction.",
+    "زموږ پروژې وګورئ":"View Our Projects",
+    "له موږ سره اړیکه":"Contact Us",
+    "باور • کیفیت • مسلکیتوب":"Trust • Quality • Professionalism",
+    "عبید ساختماني شرکت (O.C.C) د ساختماني خدمتونو په برخه کې د کیفیت، مسلکیتوب، خوندیتوب او د مشتریانو رضایت ته ژمن دی. زموږ موخه دا ده چې هره پروژه د مسلکي انجینرانو، معیاري موادو او دقیق نظارت په مرسته بشپړه شي.":"Obaid Construction Company (O.C.C) is committed to quality, professionalism, safety and customer satisfaction. Our goal is to complete every project with professional engineers, quality materials and careful supervision.",
+    "زموږ خدمات":"Our Services",
+    "ستاسو د پروژې لپاره مسلکي حللارې":"Professional Solutions for Your Project",
+    "بشپړه اعمار":"Complete Construction",
+    "موږ ستاسو پروژې له بنسټ څخه تر وروستي چت پورې د باکیفیته موادو، عصري ډیزاین، مسلکي کارکوونکو او پرمختللو ماشینونو په مرسته په ټاکلې موده کې بشپړوو.":"We complete your projects from foundation to finishing using quality materials, modern design, skilled workers and advanced equipment, within the agreed timeframe.",
+    "نقشه جوړونه":"Architectural & Engineering Design",
+    "موږ ستاسو د پروژو لپاره ستاسو د خوښې مطابق نقشې د تکړه او بااستعداده انجینرانو په مرسته جوړوو.":"We prepare project plans tailored to your needs with the support of skilled and experienced engineers.",
+    "بشپړه نظارت":"Full Project Supervision",
+    "موږ ستاسو د اعمار بشپړ نظارت ترسره کوو، ترڅو هره پروژه مو په پوره دقت او مسلکي ډول بشپړه شي.":"We provide complete construction supervision to ensure every project is completed professionally and with close attention to detail.",
+    "بیا رغونه":"Renovation",
+    "موږ د استوګنیزو کورونو، دفترونو او مارکیټونو بیا رغونه د نوو او عصري ډیزاینونو په مرسته ترسره کوو.":"We renovate residential properties, offices and commercial buildings using fresh, modern designs.",
+    "د O.C.C د پروژو او کاري تجربې لنډه کتنه":"An overview of O.C.C projects and professional experience",
+    "بشپړې شوې پروژې":"Completed Projects",
+    "روانې پروژې":"Ongoing Projects",
+    "کاله کاري تجربه":"Years of Experience",
+    "ټولې پروژې":"Total Projects",
+    "په کندهار کې بشپړې شوې":"Completed in Kandahar",
+    "په کابل کې بشپړې شوې":"Completed in Kabul",
+    "په کندهار کې د روانو پروژو پرمختګ":"Progress of Ongoing Projects in Kandahar",
+    "لومړۍ پروژه":"Project 1",
+    "دوهمه پروژه":"Project 2",
+    "درېیمه پروژه":"Project 3",
+    "څلورمه پروژه":"Project 4",
+    "زموږ د ساختماني کارونو انځوریزه کتنه":"A visual overview of our construction work",
+    "د مشورې او ساختماني خدمتونو لپاره اړیکه ونیسئ":"Contact us for consultations and construction services",
+    "د واتساپ او ټیلیفون شمیرې":"WhatsApp & Phone Numbers",
+    "واتساپ ته پیغام":"Message Us on WhatsApp",
+    "اوس زنګ ووهئ":"Call Now",
+    "د کندهار دفتر":"Kandahar Office",
+    "کندهار، حضرت جي بابا، رحمت نوري پلازه، درېیم منزل، ۲۶ نمبر دفتر":"Office 26, 3rd Floor, Rahmat Noori Plaza, Hazratji Baba, Kandahar, Afghanistan",
+    "د کابل دفتر":"Kabul Office",
+    "کابل، د پروژې تایمني، دوهم سړک، اریانا پلازه":"Ariana Plaza, 2nd Street, Taimani, Kabul, Afghanistan",
+    "باور، کیفیت او مسلکیتوب":"Trust, Quality & Professionalism",
+    "© 2026 O.C.C. ټول حقوق خوندي دي.":"© 2026 O.C.C. All rights reserved.",
+    "📞 زنګ":"📞 Call",
+    "۰۱":"01","۰۲":"02","۰۳":"03","۰۴":"04",
+    "۲۷":"27","۴":"4","۳":"3","۳۱":"31","۱۸":"18","۹":"9",
+    "۵۰٪":"50%","۶۰٪":"60%","۲۵٪":"25%","۱۵٪":"15%"
+  };
+  const toggle = document.getElementById("language-toggle");
+  if (!toggle) return;
+  const original = new Map();
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) original.set(node, node.nodeValue);
+  let english = false;
+  toggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    english = !english;
+    original.forEach((value, textNode) => {
+      if (english) {
+        const key = value.replace(/\\s+/g, " ").trim();
+        if (translations[key]) textNode.nodeValue = value.replace(key, translations[key]);
+      } else {
+        textNode.nodeValue = value;
+      }
+    });
+    document.documentElement.lang = english ? "en" : "ps";
+    document.documentElement.dir = english ? "ltr" : "rtl";
+    document.body.style.direction = english ? "ltr" : "rtl";
+    toggle.textContent = english ? "پښتو" : "English";
+    document.querySelectorAll(".brand > div").forEach(el => el.style.textAlign = english ? "left" : "");
+    document.querySelectorAll(".progress-head").forEach(el => el.style.direction = english ? "ltr" : "");
+    document.querySelectorAll(".progress-list h3").forEach(el => el.style.textAlign = "center");
   });
 })();
 </script>
