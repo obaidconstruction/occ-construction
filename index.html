@@ -841,7 +841,7 @@
     english = !english;
     original.forEach((value, textNode) => {
       if (english) {
-        const key = value.replace(/\\s+/g, " ").trim();
+        const key = value.replace(/\s+/g, " ").trim();
         if (translations[key]) textNode.nodeValue = translations[key];
       } else {
         textNode.nodeValue = value;
