@@ -240,6 +240,31 @@
     .service h3 { color: var(--navy); margin: 12px 0 7px; }
     .service p { margin: 0; font-size: 14px; }
 
+    .statistics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      padding: 22px 16px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #e5edf5;
+      border-bottom: 3px solid #087bc1;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px #10243b0d;
+    }
+    .stat-value { display: block; color: #087bc1; font-size: 34px; font-weight: 800; line-height: 1.3; }
+    .stat-label { display: block; color: #10243b; font-weight: 700; }
+    .stat-sub { color: #68788b; font-size: 12px; direction: ltr; }
+    .stats-location { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .stats-location article { padding: 18px; background: #fff; border: 1px solid #e5edf5; border-radius: 14px; text-align: center; }
+    .progress-list { max-width: 760px; margin: 26px auto 0; padding: 22px; background: #fff; border: 1px solid #e5edf5; border-radius: 14px; }
+    .progress-item { margin-top: 15px; }
+    .progress-head { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; }
+    .progress-track { height: 10px; margin-top: 7px; overflow: hidden; background: #e8eef4; border-radius: 20px; }
+    .progress-fill { height: 100%; background: #087bc1; border-radius: 20px; }
+    @media (max-width: 700px) { .statistics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     .projects {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -414,7 +439,8 @@
       .tagline { font-size: 11px; }
       .brand .pashto-tagline { font-size: 12px; }
       .short-name { font-size: 16px; }
-      nav { gap: 7px 15px; }
+      nav { flex-wrap: nowrap; justify-content: flex-start; gap: 7px 12px; overflow-x: auto; white-space: nowrap; }
+      nav a { flex: 0 0 auto; font-size: 12px; }
       .hero { min-height: 430px; padding: 55px 14px; }
       .hero-content { padding: 22px 14px; }
       .about-box { padding: 20px 17px; }
@@ -466,6 +492,7 @@
   <nav>
     <a href="#about">زموږ په اړه</a>
     <a href="#services">خدمات</a>
+    <a href="#statistics">د شرکت لاسته‌راوړنې</a>
     <a href="#projects">زموږ د پروژو کتنه</a>
     <a href="#contact">اړیکه</a>
     <a href="#english">English</a>
@@ -557,6 +584,32 @@
              alt="O.C.C Engineering App Icon"
              style="width:76px; height:76px; object-fit:contain; border-radius:16px;">
         <a class="btn btn-blue" href="https://github.com/obaidconstruction/-occ-engineering-app/releases/download/v1.0.0/OCC_Engineering.apk" target="_blank" rel="noopener">⬇ Download O.C.C App</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="statistics" class="section-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>د شرکت لاسته‌راوړنې</h2>
+        <p>د O.C.C د پروژو او کاري تجربې لنډه کتنه</p>
+      </div>
+      <div class="statistics-grid">
+        <article class="stat-card"><span class="stat-value">۲۷</span><span class="stat-label">بشپړې شوې پروژې</span><span class="stat-sub">Completed Projects</span></article>
+        <article class="stat-card"><span class="stat-value">۴</span><span class="stat-label">روانې پروژې</span><span class="stat-sub">Ongoing Projects</span></article>
+        <article class="stat-card"><span class="stat-value">۳</span><span class="stat-label">کاله کاري تجربه</span><span class="stat-sub">Years of Experience</span></article>
+        <article class="stat-card"><span class="stat-value">۳۱</span><span class="stat-label">ټولې پروژې</span><span class="stat-sub">Total Projects</span></article>
+      </div>
+      <div class="stats-location">
+        <article><span class="stat-value">۱۸</span><span class="stat-label">په کندهار کې بشپړې شوې</span></article>
+        <article><span class="stat-value">۹</span><span class="stat-label">په کابل کې بشپړې شوې</span></article>
+      </div>
+      <div class="progress-list">
+        <h3 style="margin:0; color:#10243b; text-align:center;">په کندهار کې د روانو پروژو پرمختګ</h3>
+        <div class="progress-item"><div class="progress-head"><span>لومړۍ پروژه</span><span>۵۰٪</span></div><div class="progress-track"><div class="progress-fill" style="width:50%"></div></div></div>
+        <div class="progress-item"><div class="progress-head"><span>دوهمه پروژه</span><span>۶۰٪</span></div><div class="progress-track"><div class="progress-fill" style="width:60%"></div></div></div>
+        <div class="progress-item"><div class="progress-head"><span>درېیمه پروژه</span><span>۲۵٪</span></div><div class="progress-track"><div class="progress-fill" style="width:25%"></div></div></div>
+        <div class="progress-item"><div class="progress-head"><span>څلورمه پروژه</span><span>۱۵٪</span></div><div class="progress-track"><div class="progress-fill" style="width:15%"></div></div></div>
       </div>
     </div>
   </section>
